@@ -1,0 +1,28 @@
+@import "src/styles";
+
+.register {
+  width: 100%;
+  height: 100vh;
+  background-color: whitesmoke;
+  position: relative;
+
+  @include transition;
+
+  .float-box,
+  .float-box-2 {
+    float: left;
+    width: 50%;
+  }
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 800px) {
+  .register__form {
+    width: 100%;
+  }
+
+  .test,
+  .test2 {
+    float: none !important;
+  }
+}

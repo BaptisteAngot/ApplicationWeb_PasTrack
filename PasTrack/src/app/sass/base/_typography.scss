@@ -1,0 +1,62 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+
+  &--main {
+    font-weight: 400;
+  }
+
+  &--sub {
+    font-weight: 900;
+  }
+
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+
+.heading-secondary-graph {
+  padding-top: 50px;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center !important;
+  display: none;
+}
+
+.typography-text {
+  font-size: 1.5rem;
+  text-align: justify;
+  line-height: 3rem;
+}
+
+.google,
+.apple {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+.informations-bold {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+.invalid-feedback {
+  color: $color-btn-delete;
+  font-size: 1rem;
+  padding-left: 2rem;
+}
