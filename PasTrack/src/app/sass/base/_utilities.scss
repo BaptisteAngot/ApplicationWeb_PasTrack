@@ -1,0 +1,25 @@
+.clear:before, .clear:after {
+  content: '';
+  display: table;
+}
+
+.clear:after {
+  clear: both
+}
+
+.clear {
+  *zoom: 1;
+} 
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+hr.underline {
+  border-top: 1px dotted #8c8b8b;
+  border-bottom: 1px dotted #fff;
+}

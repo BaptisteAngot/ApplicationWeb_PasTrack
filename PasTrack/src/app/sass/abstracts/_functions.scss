@@ -1,0 +1,20 @@
+//CLEAR
+.clear:before, .clear:after {
+  content: '';
+  display: table;
+}
+
+.clear:after {
+  clear: both
+}
+
+.clear {
+  *zoom: 1;
+}
+
+//FLOAT
+.float-box,
+.float-box-2 {
+  float: left;
+  width: 50%;
+}

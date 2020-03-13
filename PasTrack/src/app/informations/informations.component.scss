@@ -1,0 +1,218 @@
+@import "src/styles";
+
+.informations {
+  height: 100vh;
+  position: relative;
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    filter: brightness(40%);
+    overflow: hidden;
+
+    &__content {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__graph {
+    width: 50%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, .8);
+
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+
+    position: relative;
+    float: right;
+    @include transition;
+
+    .display {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $color-white;
+    }
+  }
+
+  &__text-box {
+    width: 50%;
+    height: 100%;
+
+    float: left;
+    position: relative;
+    color: $color-white;
+
+    &--section {
+      width: 100%;
+      padding: 50px;
+
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .resp-popup {
+    position: absolute;
+    top: 5vh;
+    left: 1.5vh;
+    z-index: 111111;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-white;
+    font-weight: 700;
+    @include transition;
+
+    display: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+
+.graph {
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+  background-color: $color-grey-dark-3;
+
+  &__arrow {
+    width: 40px;
+    position: absolute;
+    bottom: 2.5vh;
+    left: 2.5vh;
+    z-index: 9998;
+  }
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .8);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+  }
+
+  &__content {
+    @include absCenter;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba(#000, .2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.25);
+    transition: all .5s .2s;
+  }
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.6666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
+  //Open states
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark-3;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 800px) {
+  .informations__graph {
+    width: 100%;
+    float: none;
+  }
+
+  .informations__text-box {
+    display: none;
+  }
+
+  .resp-popup {
+    display: inline-block !important;
+  }
+
+  .heading-secondary-graph {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 905px) {
+  .popup__left {
+    display: none;
+  }
+}

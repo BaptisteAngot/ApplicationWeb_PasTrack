@@ -1,0 +1,18 @@
+@import "src/styles";
+
+.login {
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+  background-color: $color-grey-light-1;
+
+  @include transition;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 800px) {
+  .login__form {
+    width: 80%;
+  }
+}
